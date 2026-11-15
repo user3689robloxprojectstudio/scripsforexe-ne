@@ -1,16 +1,31 @@
 const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({ path: path.join(__dirname, '.env') });
+
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
-const dotenv = require('dotenv');
+const PgSessionStore = require('connect-pg-simple')(session);
+const { Pool } = require('pg');
 
 const authRoutes = require('./server/routes/auth');
 const userRoutes = require('./server/routes/users');
 const scriptRoutes = require('./server/routes/scripts');
 const rawRoutes = require('./server/routes/raw');
 
-dotenv.config({ path: path.join(__dirname, '.env') });
+if (process.env.NODE_ENV === 'production' && !process.env.DATABASE_URL) {
+  throw new Error('DATABASE_URL must be set in production.');
+}
+
+if (process.env.NODE_ENV === 'production' && !process.env.SESSION_SECRET) {
+  throw new Error('SESSION_SECRET must be set in production.');
+}
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  max: 1
+});
 
 const app = express();
 
@@ -24,6 +39,11 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
+  store: new PgSessionStore({
+    pool,
+    tableName: 'express_sessions',
+    createTableIfMissing: true
+  }),
   secret: process.env.SESSION_SECRET || 'development-secret',
   resave: false,
   saveUninitialized: false,
