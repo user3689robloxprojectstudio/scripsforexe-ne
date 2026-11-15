@@ -8,7 +8,7 @@ ScriptsForExe.net is a dark-mode Lua and plain-text hosting platform with Discor
 - Lua and TXT file upload, editing, visibility control, and deletion
 - Public script discovery and search
 - Direct raw script hosting via /raw/:id
-- SQLite-ready Prisma setup with PostgreSQL-compatible schema migration path
+- PostgreSQL database managed through Prisma
 - Responsive design for desktop and mobile
 
 ## Project structure
@@ -39,25 +39,33 @@ ScriptsForExe.net is a dark-mode Lua and plain-text hosting platform with Discor
 
 1. Create a new Discord application at https://discord.com/developers/applications.
 2. Add a Redirect under OAuth2 > General:
-   - `https://scriptsforexe.net/auth/discord/callback`
+   - `https://scriptsforexenet.vercel.app/auth/discord/callback`
 3. Copy the client ID and secret into `.env`.
 4. Set the same callback URL in your deployment environment.
 
-## PostgreSQL deployment
+## PostgreSQL database
 
-The app is configured for Prisma with SQLite for local development. For production, update `DATABASE_URL` in `.env` to your PostgreSQL connection string, for example:
+The app uses PostgreSQL for application data and session storage. Set `DATABASE_URL` in `.env` to your managed PostgreSQL connection string, for example:
 
 ```env
-DATABASE_URL="postgresql://user:password@host:5432/scriptsforexe"
+DATABASE_URL="postgresql://USER:PASSWORD@HOST/DATABASE?sslmode=require"
 ```
 
-Then run:
+Create the Prisma tables after setting the URL:
 
 ```bash
 npx prisma db push
 ```
 
 ## Deployment
+
+### Vercel
+
+1. Create a managed PostgreSQL database, such as a Neon database.
+2. Add `DATABASE_URL`, `SESSION_SECRET`, `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET`, and `DISCORD_CALLBACK_URL` to the Vercel project's Production environment variables.
+3. Use `https://YOUR-VERCEL-DOMAIN/auth/discord/callback` as `DISCORD_CALLBACK_URL` and register the same URL in the Discord application's OAuth2 Redirects.
+4. Run `npx prisma db push` with the same `DATABASE_URL` to create the tables.
+5. Redeploy after setting the environment variables.
 
 ### Render / Railway / VPS
 
