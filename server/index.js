@@ -60,6 +60,10 @@ app.get('*', (req, res) => {
   return res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`ScriptsForExe.net listening on http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`ScriptsForExe.net listening on http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
