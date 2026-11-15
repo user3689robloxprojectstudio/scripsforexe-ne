@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script Viewer | ScriptsForExe.net</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/scripts.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container navbar">
+        <a class="brand" href="/index.html" aria-label="ScriptsForExe.net home">
+          <div class="brand-mark"><img src="/assets/logo.svg" alt="" aria-hidden="true" /></div>
+          <span>ScriptsForExe.net</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container page-shell script-view-shell">
+      <section class="card script-header">
+        <div>
+          <div class="kicker">Lua Script</div>
+          <h1 id="script-title">Loading...</h1>
+        </div>
+        <div class="script-actions">
+          <button class="btn ghost" id="copy-raw-btn">Copy Raw URL</button>
+          <button class="btn ghost" id="copy-code-btn">Copy Code</button>
+          <a id="download-file-link" class="btn primary" href="#">Download Lua File</a>
+        </div>
+      </section>
+
+      <section class="meta-grid card">
+        <div><span class="muted">Creator</span><strong id="script-owner">-</strong></div>
+        <div><span class="muted">Visibility</span><strong id="script-visibility">-</strong></div>
+        <div><span class="muted">Updated</span><strong id="script-updated">-</strong></div>
+        <div><span class="muted">Downloads</span><strong id="script-downloads">0</strong></div>
+      </section>
+
+      <section class="card script-description-box">
+        <h3>Description</h3>
+        <p id="script-description">Loading description...</p>
+      </section>
+
+      <section class="card editor-panel">
+        <div id="script-editor" style="min-height: 540px; border-radius: 12px;"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+    <script src="/js/global.js"></script>
+    <script src="/js/script-view.js"></script>
+  </body>
+</html>

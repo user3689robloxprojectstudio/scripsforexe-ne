@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | ScriptsForExe.net</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/upload.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar card">
+        <a class="sidebar-brand" href="/index.html" aria-label="ScriptsForExe.net home">
+          <div class="brand-mark"><img src="/assets/logo.svg" alt="" aria-hidden="true" /></div>
+          <span>ScriptsForExe.net</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="/dashboard.html" class="nav-item">Dashboard</a>
+          <a href="/scripts.html" class="nav-item">My Scripts</a>
+          <a href="/upload.html" class="nav-item">Upload Script</a>
+          <a href="/explore.html" class="nav-item">Explore</a>
+          <a href="/settings.html" class="nav-item active">Settings</a>
+          <button class="nav-item danger" data-logout>Logout</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <section class="panel-card card upload-panel">
+          <div class="section-head">
+            <div>
+              <p class="muted">Profile</p>
+              <h1>Account settings</h1>
+            </div>
+          </div>
+
+          <div class="settings-profile">
+            <img id="account-avatar" class="avatar" alt="Discord avatar" />
+            <div>
+              <h3 id="account-username">Loading...</h3>
+              <p id="account-discord-id" class="muted">-</p>
+            </div>
+          </div>
+
+          <form id="settings-form" class="upload-form">
+            <div>
+              <label class="label" for="display-name">Display name</label>
+              <input id="display-name" class="input" name="username" />
+            </div>
+
+            <div>
+              <label class="label" for="default-visibility">Default script visibility</label>
+              <select id="default-visibility" class="select" name="defaultVisibility">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+              </select>
+            </div>
+
+            <div class="upload-actions">
+              <button class="btn primary" type="submit">Save settings</button>
+              <button type="button" class="btn ghost" data-logout>Log out</button>
+            </div>
+          </form>
+
+          <div class="danger-zone">
+            <h3>Danger zone</h3>
+            <button id="delete-account" class="btn danger-btn">Delete account</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/settings.js"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScriptsForExe.net | Your Scripts. Your Platform.</title>
+    <meta name="description" content="Upload, manage, host, and share Lua and text files with Discord-powered authentication and instant raw URLs." />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container navbar">
+        <a class="brand" href="/index.html" aria-label="ScriptsForExe.net home">
+          <div class="brand-mark"><img src="/assets/logo.svg" alt="" aria-hidden="true" /></div>
+          <span>ScriptsForExe.net</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/index.html">Home</a>
+          <a href="/explore.html">Explore Scripts</a>
+          <a href="#features">Features</a>
+          <a href="#docs">Documentation</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="/login.html" class="btn ghost">Login</a>
+          <a href="/login.html" class="btn primary">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="hero-badge"><span class="status-dot"></span> A home for your scripts and text files</div>
+            <h1>Your work.<br /><span>Ready to share.</span></h1>
+            <p>Keep your Lua scripts and plain-text files organized, shareable, and ready when you need them. Upload once and get a clean raw link in seconds.</p>
+            <div class="hero-actions">
+              <a href="/login.html" class="btn primary">Get Started</a>
+              <a href="/explore.html" class="btn ghost">Explore Scripts</a>
+            </div>
+            <div class="hero-proof">
+              <span class="hero-proof-check" aria-hidden="true"><img src="/assets/images/feature-safe.svg" alt="" /></span>
+              <span><strong>Lua + TXT uploads</strong> · Up to 2 MB per file</span>
+            </div>
+          </div>
+          <div class="preview-wrap" data-reveal>
+            <div class="floating-chip chip-top">
+              <span class="chip-icon"><img src="/assets/images/feature-safe.svg" alt="" aria-hidden="true" /></span>
+              <span><strong>Upload complete</strong><small>Ready to share</small></span>
+            </div>
+            <div class="preview-card card">
+              <div class="editor-window">
+                <div class="editor-topbar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="editor-tab"><span class="file-mark">L</span> welcome.lua</span>
+                  <span class="editor-status">Saved</span>
+                </div>
+                <pre class="code-block"><span class="line" data-line="01"><span class="code-purple">local</span> library = {}</span>
+<span class="line" data-line="02"></span>
+<span class="line" data-line="03"><span class="code-purple">function</span> library:<span class="code-cyan">publish</span>(file)</span>
+<span class="line" data-line="04">  <span class="code-purple">local</span> link = <span class="code-green">"scriptsforexe.net/raw/..."</span></span>
+<span class="line" data-line="05">  <span class="code-purple">return</span> link</span>
+<span class="line" data-line="06"><span class="code-purple">end</span></span>
+<span class="line" data-line="07"></span>
+<span class="line" data-line="08">library:<span class="code-cyan">publish</span>(<span class="code-orange">"my-script.lua"</span>)</span>
+<span class="line" data-line="09"><span class="code-purple">return</span> library</span></pre>
+              </div>
+              <div class="preview-footer"><span>Lua source · 9 lines</span><span>UTF-8</span></div>
+            </div>
+            <div class="floating-chip chip-bottom">
+              <span class="chip-icon"><img src="/assets/images/feature-link.svg" alt="" aria-hidden="true" /></span>
+              <span><strong>One clean link</strong><small>Share it anywhere</small></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="container page-shell home-content">
+        <div class="section-heading">
+          <div class="kicker">Everything in one place</div>
+          <h2>A calmer way to host and share your files.</h2>
+          <p>Skip the clutter. Keep your files organized and give every upload a dependable link.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card card" data-reveal>
+            <div class="feature-icon"><img src="/assets/images/feature-link.svg" alt="" aria-hidden="true" /></div>
+            <h3>Instant Raw Links</h3>
+            <p>Every upload gets a direct URL, ready to share or use wherever your workflow needs it.</p>
+          </article>
+          <article class="feature-card card" data-reveal>
+            <div class="feature-icon"><img src="/assets/images/feature-discord.svg" alt="" aria-hidden="true" /></div>
+            <h3>Discord Authentication</h3>
+            <p>Securely sign in with your Discord account and keep your uploads tied to your identity.</p>
+          </article>
+          <article class="feature-card card" data-reveal>
+            <div class="feature-icon"><img src="/assets/images/feature-organize.svg" alt="" aria-hidden="true" /></div>
+            <h3>Simple Organization</h3>
+            <p>Update details, add tags, and manage your Lua scripts and text files from one dashboard.</p>
+          </article>
+          <article class="feature-card card" data-reveal>
+            <div class="feature-icon"><img src="/assets/images/feature-hosting.svg" alt="" aria-hidden="true" /></div>
+            <h3>Fast, Reliable Hosting</h3>
+            <p>Fetch your text-based files through a lightweight URL that works across your tools.</p>
+          </article>
+          <article class="feature-card card" data-reveal>
+            <div class="feature-icon"><img src="/assets/images/feature-private.svg" alt="" aria-hidden="true" /></div>
+            <h3>Private Files</h3>
+            <p>Keep scripts private and accessible only to their owners while public scripts remain discoverable.</p>
+          </article>
+          <article class="feature-card card" data-reveal>
+            <div class="feature-icon"><img src="/assets/images/feature-safe.svg" alt="" aria-hidden="true" /></div>
+            <h3>Safe by Design</h3>
+            <p>Files are validated and stored as text. Your uploads are never executed on the server.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="docs" class="container page-shell steps-section">
+        <div class="section-heading">
+          <div class="kicker">Up and running in minutes</div>
+          <h2>Three steps. No extra setup.</h2>
+        </div>
+        <div class="steps">
+          <div class="step card" data-reveal>
+            <div class="step-icon"><img src="/assets/images/feature-discord.svg" alt="" aria-hidden="true" /></div>
+            <h3>Sign in with Discord</h3>
+            <p>Authenticate with your Discord account and unlock your personal hosting dashboard.</p>
+          </div>
+          <div class="step card" data-reveal>
+            <div class="step-icon"><img src="/assets/images/feature-hosting.svg" alt="" aria-hidden="true" /></div>
+            <h3>Upload a Lua or TXT file</h3>
+            <p>Drop in a .lua or .txt file, then choose its visibility and add any helpful details.</p>
+          </div>
+          <div class="step card" data-reveal>
+            <div class="step-icon"><img src="/assets/images/feature-link.svg" alt="" aria-hidden="true" /></div>
+            <h3>Share your link</h3>
+            <p>Copy your raw URL and use it wherever you need. No extra setup required.</p>
+          </div>
+        </div>
+        <div class="final-cta" data-reveal>
+          <div>
+            <div class="kicker">Ready when you are</div>
+            <h2>Your next upload is one click away.</h2>
+            <p>Get started with a clean, dependable home for your Lua scripts and text files.</p>
+          </div>
+          <a href="/login.html" class="btn primary">Create your account <span class="cta-icon" aria-hidden="true"><img src="/assets/images/feature-link.svg" alt="" /></span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>
+          <a class="brand" href="/index.html" aria-label="ScriptsForExe.net home">
+            <div class="brand-mark"><img src="/assets/logo.svg" alt="" aria-hidden="true" /></div>
+            <span>ScriptsForExe.net</span>
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>© 2026 ScriptsForExe.net</div>
+      </div>
+    </footer>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

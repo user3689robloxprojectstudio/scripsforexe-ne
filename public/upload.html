@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Script | ScriptsForExe.net</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/upload.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar card">
+        <a class="sidebar-brand" href="/index.html" aria-label="ScriptsForExe.net home">
+          <div class="brand-mark"><img src="/assets/logo.svg" alt="" aria-hidden="true" /></div>
+          <span>ScriptsForExe.net</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="/dashboard.html" class="nav-item">Dashboard</a>
+          <a href="/scripts.html" class="nav-item">My Scripts</a>
+          <a href="/upload.html" class="nav-item active">Upload Script</a>
+          <a href="/explore.html" class="nav-item">Explore</a>
+          <a href="/settings.html" class="nav-item">Settings</a>
+          <button class="nav-item danger" data-logout>Logout</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <section class="panel-card card upload-panel">
+          <div class="section-head">
+            <div>
+              <p class="muted">Upload</p>
+              <h1>Host a script or text file</h1>
+            </div>
+          </div>
+
+          <form id="upload-form" class="upload-form">
+            <div id="dropzone" class="dropzone" tabindex="0">
+              <input id="script-file" type="file" accept=".lua,.txt,text/plain" hidden />
+              <div class="dropzone-content">
+                <div class="drop-icon"><img src="/assets/images/feature-hosting.svg" alt="" aria-hidden="true" /></div>
+                <p>Drag and drop a .lua or .txt file here</p>
+                <span class="muted">Text files up to 2 MB</span>
+                <button type="button" class="btn ghost" id="select-file-btn">Choose file</button>
+              </div>
+            </div>
+
+            <div class="filename-row">
+              <span class="muted">Selected file:</span>
+              <strong id="selected-file-name">No file selected</strong>
+            </div>
+
+            <div class="field-grid">
+              <div>
+                <label class="label" for="title">Script name</label>
+                <input id="title" class="input" name="title" placeholder="AutoFarm Loader" required />
+              </div>
+              <div>
+                <label class="label" for="visibility">Visibility</label>
+                <select id="visibility" class="select" name="visibility">
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="label" for="description">Description</label>
+              <textarea id="description" class="textarea" name="description" placeholder="Describe what this script does." rows="4"></textarea>
+            </div>
+
+            <div>
+              <label class="label" for="tags">Tags</label>
+              <input id="tags" class="input" name="tags" placeholder="utility, combat, auto" />
+            </div>
+
+            <div class="upload-actions">
+              <button class="btn primary" id="upload-button" type="submit">Upload Script</button>
+              <span id="upload-status" class="muted"></span>
+            </div>
+            <div id="progress-bar" class="progress-bar hidden"><span></span></div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/upload.js"></script>
+  </body>
+</html>

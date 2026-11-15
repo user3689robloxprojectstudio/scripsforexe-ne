@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.local
+npm-debug.log*
+.prisma
+*.db
+*.db-journal
+.DS_Store
+storage/*
+!storage/.gitkeep

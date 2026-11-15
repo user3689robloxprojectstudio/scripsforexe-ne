@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | ScriptsForExe.net</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar card">
+        <a class="sidebar-brand" href="/index.html" aria-label="ScriptsForExe.net home">
+          <div class="brand-mark"><img src="/assets/logo.svg" alt="" aria-hidden="true" /></div>
+          <span>ScriptsForExe.net</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="/dashboard.html" class="nav-item active">Dashboard</a>
+          <a href="/scripts.html" class="nav-item">My Scripts</a>
+          <a href="/upload.html" class="nav-item">Upload Script</a>
+          <a href="/explore.html" class="nav-item">Explore</a>
+          <a href="/settings.html" class="nav-item">Settings</a>
+          <button class="nav-item danger" data-logout>Logout</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar-panel card">
+          <div class="search-wrap">
+            <input type="text" placeholder="Search scripts, tags, or names" />
+          </div>
+          <div class="panel-actions">
+            <button class="icon-btn" aria-label="Notifications"><img src="/assets/images/ui-bell.svg" alt="" aria-hidden="true" /></button>
+            <div class="user-pill" id="user-pill"></div>
+          </div>
+        </header>
+
+        <section class="welcome card">
+          <div>
+            <p class="muted">Overview</p>
+            <h1 id="welcome-name">Welcome back</h1>
+            <p class="muted">Manage your scripts and hosting from one place.</p>
+          </div>
+          <div class="welcome-actions">
+            <a href="/upload.html" class="btn primary">Upload New Script</a>
+            <a href="/scripts.html" class="btn ghost">View My Scripts</a>
+            <a href="/explore.html" class="btn ghost">Explore Public Scripts</a>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card card">
+            <span class="stat-label">Total Scripts</span>
+            <strong id="stat-total">0</strong>
+          </article>
+          <article class="stat-card card">
+            <span class="stat-label">Public Scripts</span>
+            <strong id="stat-public">0</strong>
+          </article>
+          <article class="stat-card card">
+            <span class="stat-label">Private Scripts</span>
+            <strong id="stat-private">0</strong>
+          </article>
+          <article class="stat-card card">
+            <span class="stat-label">Total Downloads</span>
+            <strong id="stat-downloads">0</strong>
+          </article>
+        </section>
+
+        <section class="panel-card card">
+          <div class="section-head">
+            <h2>Recent uploads</h2>
+            <a href="/scripts.html" class="muted-link">View all</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Script name</th>
+                  <th>Visibility</th>
+                  <th>Upload date</th>
+                  <th>Downloads</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="recent-scripts-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

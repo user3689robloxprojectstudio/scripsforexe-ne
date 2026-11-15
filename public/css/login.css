@@ -1,0 +1,8 @@
+.auth-page { display: grid; place-items: center; min-height: 100vh; }
+.login-shell { width: min(480px, calc(100% - 2rem)); }
+.login-card { padding: 2rem; text-align: center; }
+.centered-brand { justify-content: center; margin-bottom: 1rem; }
+.login-card h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 0.75rem; }
+.login-card p { color: var(--muted); margin-bottom: 1.5rem; }
+.discord-btn { width: 100%; font-size: 1.02rem; background: #5865f2; border-color: transparent; }
+.discord-btn:hover { background: #4c5de2; }
